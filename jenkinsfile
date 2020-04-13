@@ -17,10 +17,10 @@ node("chefworkstation") {
                  ]
 })
 
-   stage("Rubocop Test", {
+   stage("Rubocop Test") {
        sh """
      cd /tmp/chef-repo/
      chef exec cookstyle coobookbook/${REPO_NAME}
 """
-)}
+}
 }

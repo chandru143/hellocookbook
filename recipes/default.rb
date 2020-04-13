@@ -6,5 +6,5 @@
 #testing
 
 package 'tree' do
- action :install
+  action :install
 end

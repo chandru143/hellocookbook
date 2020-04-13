@@ -1,7 +1,7 @@
 name 'hellocookbook'
 maintainer 'chandru'
 maintainer_email 'chandru@example.com'
-license 'opensource license supermarket'
+license 'Apache-2.0'
 description 'Installs/Configures hellocookbook'
 version '0.1.0'
 supports 'redhat'

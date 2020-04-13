@@ -30,4 +30,11 @@ node("chefworkstation") {
 """
 }
 
+    stage("Inspec Test") {
+       sh """
+     cd /var/lib/jenkins/workspace/${REPO_NAME}
+     chef exec inspec exec test/integration/default/default_test.rb
+"""
+}
+
 }

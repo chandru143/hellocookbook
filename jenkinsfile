@@ -22,4 +22,12 @@ node("chefworkstation") {
      chef exec foodcritic ${REPO_NAME}
 """
 }
+
+    stage("Kitchen Converge") {
+       sh """
+     cd /var/lib/jenkins/workspace/${REPO_NAME}
+     kitchen converge
+"""
+}
+
 }

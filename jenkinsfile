@@ -10,8 +10,8 @@ node("chefworkstation") {
             scm:[
                  $class: 'GitSCM',
                  branches: [[name: GIT_BRANCH]],
-                 doGenerateSubmoduleConfiguration: false,
-                 extensions: [[$class: 'ClearBeforeCheckout']],
+                 doGeneratesubmoduleConfigurations: false,
+                 extensions: [[$class: 'CleanBeforeCheckout']],
                  submoduleCfg: [],
                  userRemoteconfigs: [[url: GIT_URL]]
                  ]
@@ -19,8 +19,8 @@ node("chefworkstation") {
 
    stage("Rubocop Test") {
        sh """
-     cd /tmp/chef-repo/
-     chef exec cookstyle coobookbook/${REPO_NAME}
+     cd /var/lib/jenkins/workspace/
+     chef exec cookstyle ${REPO_NAME}
 """
 }
 }

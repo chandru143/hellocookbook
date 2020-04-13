@@ -1,0 +1,26 @@
+def GIT_URL = "https://github.com/chandru143/hellocookbook.git"
+def GIT_BRANCH = "master"
+def REPO_NAME = "hellocookbook"
+
+node("chefworkstation") {
+
+   stage("Checkout SCM", {
+            checkout changelog: false,
+            poll: false,
+            scm:[
+                 $class: 'GitSCM',
+                 branches: [[name: GIT_BRANCH]],
+                 doGenerateSubmoduleConfiguration: false,
+                 extensions: [[$class: 'ClearBeforeCheckout']],
+                 submoduleCfg: [],
+                 userRemoteconfigs: [[url: GIT_URL]]
+                 ]
+})
+
+   stage("Rubocop Test", {
+       sh """
+     cd /tmp/chef-repo/
+     chef exec cookstyle coobookbook/${REPO_NAME}
+"""
+}
+}

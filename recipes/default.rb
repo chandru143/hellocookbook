@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-#testing
+# testing
 
 package 'tree' do
   action :install

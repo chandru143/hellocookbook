@@ -15,4 +15,11 @@ node("chefworkstation") {
      chef exec cookstyle ${REPO_NAME}
 """
 }
+
+    stage("FoodCritic Test") {
+       sh """
+     cd /var/lib/jenkins/workspace/
+     chef exec foodcritic ${REPO_NAME}
+"""
+}
 }

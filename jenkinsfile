@@ -22,5 +22,5 @@ node("chefworkstation") {
      cd /tmp/chef-repo/
      chef exec cookstyle coobookbook/${REPO_NAME}
 """
-}
+)}
 }

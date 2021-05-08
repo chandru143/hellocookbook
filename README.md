@@ -1,4 +1,4 @@
 # hellocookbook
 
-Testing cookbook
+Testing cookbook with GIT Learning
 
